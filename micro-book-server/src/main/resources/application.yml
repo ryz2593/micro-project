@@ -1,0 +1,22 @@
+#配置端口
+server:
+  port: 8090
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql/localhost:3306/bdb?useSSL=true
+    username: root
+    password:
+  cloud:
+    zookeeper:
+      #zookeeper集群，多个用逗号分割（如果是单台，只写一个即可）
+      connect-string: 192.168.3.220:2181,192.168.3.221:2181,192.168.3.222:2181
+  application:
+    name: book-server
+
+#配置mybatis
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+

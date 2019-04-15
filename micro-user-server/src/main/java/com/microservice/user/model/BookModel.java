@@ -1,0 +1,20 @@
+package com.microservice.user.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Date;
+
+/**
+ * @author ryz2593
+ * @date 2019/4/15
+ * @desc
+ */
+@Getter
+@Setter
+public class BookModel {
+    private Integer id;
+    private String bookName;
+    private String bookAuthor;
+    private Date bookDate;
+}

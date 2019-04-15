@@ -1,0 +1,28 @@
+server:
+  port: 9000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  cloud:
+    zookeeper:
+      #zookeeper集群，多个用逗号分割（如果是单台，只写一个即可）
+      connect-string: 192.168.3.220:2181,192.168.3.221:2181,192.168.3.222:2181
+      discovery:
+        register: false
+  application:
+    name: api-gateway
+zuul:
+  routes:
+    user:
+      path: /user/routes/**
+      serviceId: user-server
+    book:
+      path: /book/routes/**
+      serviceId: book-server
+  ignored-patterns:
+    -要忽略的1
+    -要忽略的2
